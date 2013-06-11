@@ -2,7 +2,7 @@
  
   class MailinSms {
 	
-		protected $key, $to, $from, $notify, $text, $webaction = 'SENDSMS', $url = 'http://localhost/mailin_zend_rc1/';
+		protected $key, $to, $from, $notify, $text, $webaction = 'SENDSMS', $url = 'http://ws.mailin.fr/';
 		
 		public function __construct($key){
 			$this->key = $key;
@@ -28,6 +28,11 @@
 			return $this;
 		}
 
+		public function setTag($text){
+			$this->tag = $text;
+			return $this;
+		}
+
 		public function send(){
 		
 			$ch = curl_init();
@@ -36,7 +41,8 @@
 				'key' => $this->key,	
 				'to' => $this->to,	
 				'from' => $this->from,	
-				'text' => $this->text	
+				'text' => $this->text,
+				'tag' => $this->tag
 			);
 	
 			$ndata='';
