@@ -2,7 +2,7 @@
  
   class MailinSms {
 	
-		protected $key, $to, $from, $notify, $text, $webaction = 'SENDSMS', $url = 'http://ws.mailin.fr/';
+		protected $key, $to, $from, $notify, $text, $tag, $webaction = 'SENDSMS', $url = 'http://ws.mailin.fr/';
 		
 		public function __construct($key){
 			$this->key = $key;
