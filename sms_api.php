@@ -42,7 +42,8 @@
 				'to' => $this->to,	
 				'from' => $this->from,	
 				'text' => $this->text,
-				'tag' => $this->tag
+				'tag' => $this->tag,
+				'notify_url' => $this->notify
 			);
 	
 			$ndata='';
