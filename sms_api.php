@@ -60,7 +60,6 @@
 			curl_setopt($ch, CURLOPT_HEADER, 0);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Set curl to return the data instead of printing it to the browser.
 			curl_setopt($ch, CURLOPT_URL, $this->url);
-			// curl_setopt($ch, CURLOPT_VERBOSE, true);
 			$data = curl_exec($ch);
 			curl_close($ch);
 			return $data;
