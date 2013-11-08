@@ -2,7 +2,7 @@
  
   class MailinSms {
 	
-		protected $key, $to, $from, $notify, $text, $tag, $webaction = 'SENDSMS', $url = 'http://ws.mailin.fr/';
+		protected $key, $to, $from, $callback, $text, $tag, $webaction = 'SENDSMS', $url = 'http://ws.mailin.fr/';
 		
 		public function __construct($key){
 			$this->key = $key;
@@ -18,8 +18,8 @@
 			return $this;
 		}
 
-		public function setNotify($notify_url){
-			$this->notify = $notify_url;
+		public function setCallback($callback_url){
+			$this->callback = $callback_url;
 			return $this;
 		}
 
@@ -43,7 +43,7 @@
 				'from' => $this->from,	
 				'text' => $this->text,
 				'tag' => $this->tag,
-				'notify_url' => $this->notify
+				'callback_url' => $this->callback
 			);
 	
 			$ndata='';
