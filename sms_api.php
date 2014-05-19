@@ -2,7 +2,7 @@
  
   class MailinSms {
 	
-		protected $key, $to, $from, $callback, $text, $tag, $webaction = 'SENDSMS', $url = 'http://ws.mailin.fr/';
+		protected $key, $to, $from, $callback, $text, $tag, $webaction = 'SENDSMS', $url = 'http://ws.mailin.fr/', $type='marketing';
 		
 		public function __construct($key){
 			$this->key = $key;
@@ -32,6 +32,11 @@
 			$this->tag = $text;
 			return $this;
 		}
+        
+        public function setType($text){
+			$this->type = $text;
+			return $this;
+		}
 
 		public function send(){
 		
@@ -43,7 +48,8 @@
 				'from' => $this->from,	
 				'text' => $this->text,
 				'tag' => $this->tag,
-				'callback_url' => $this->callback
+				'callback_url' => $this->callback,
+				'type' => $this->type
 			);
 	
 			$ndata='';
