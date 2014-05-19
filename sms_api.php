@@ -33,7 +33,7 @@
 			return $this;
 		}
         
-        public function setType($text){
+		public function setType($text){
 			$this->type = $text;
 			return $this;
 		}
